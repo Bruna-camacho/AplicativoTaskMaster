@@ -40,3 +40,14 @@ Aplicativo de Gerenciamento de Tarefas
 - Executar: npm install.
 - Vá no arquivo tarefa.service.ts e cole sua URL que rodou o backend.
 - Rode o projeto angular ng serve --open
+
+## Demonstração do Projeto
+
+### Tela Inicial
+![Tela Inicial](./home.png)
+
+### Tarefas Cadastradas
+![Tarefas](./tarefas.png)
+
+### Modo Escuro Ativado
+![Modo Escuro](./modo-escuro.png)
