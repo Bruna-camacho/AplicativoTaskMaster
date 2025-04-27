@@ -1,0 +1,163 @@
+:root {
+  --background-color: #f4f4f4;
+  --text-color: #333;
+  --container-color: #fff;
+}
+
+.dark-theme {
+  --background-color: #121212;
+  --text-color: #eee;
+  --container-color: #1e1e1e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: var(--container-color);
+}
+
+h1 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #302c9b;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="datetime-local"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--container-color);
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button.concluir {
+  background-color: #e0f7e9;
+}
+
+button.concluir:hover {
+  background-color: #a5d6a7;
+}
+
+button.editar {
+  background-color: #e3f2fd;
+}
+
+button.editar:hover {
+  background-color: #90caf9;
+}
+
+button.excluir {
+  background-color: #ffebee;
+}
+
+button.excluir:hover {
+  background-color: #ef9a9a;
+}
+
+.filtros {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: var(--container-color);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.filtros h3 {
+  margin-top: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--container-color);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  font-family: 'Open Sans', sans-serif;
+}
+
+li strong {
+  display: block;
+  margin-bottom: 1px;
+  font-size: 1.1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.theme-toggle-button {
+  margin-top: 0px;
+  margin-bottom: 20px;
+  background-color: #ddd;
+}
+
+.dark-theme input::placeholder,
+.dark-theme select::placeholder {
+  color: #ccc;
+}
+
+.dark-theme input[type="datetime-local"] {
+  color: #ccc;
+}
+
+.dark-theme select {
+  color: #ccc;
+}
+
+.dark-theme .filtros input[type="date"],
+.dark-theme .filtros select {
+  color: #ccc;
+}

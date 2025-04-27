@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="header">
+    <h1 class="titulo">TaskMaster</h1>
+    <img src="/assets/logo.png" alt="Logo TaskMaster">
+  </div>
+
+ <button class="theme-toggle-button" (click)="alternarTema()">🌞/🌙 Alternar Tema</button>  
+
+  <form (ngSubmit)="criarTarefa()">
+    <div>
+      <label>Descrição:</label><br>
+      <input type="text" [(ngModel)]="novaTarefa.descricao" name="descricao" placeholder="Digite sua tarefa" required>
+    </div>
+    <div>
+      <label>Data e Hora:</label><br>
+      <input type="datetime-local" [(ngModel)]="novaTarefa.dataHora" name="dataHora" required>
+    </div>
+    <div>
+      <label>Prioridade:</label><br>
+      <select [(ngModel)]="novaTarefa.prioridade" name="prioridade" required>
+        <option value="" disabled selected hidden>Definir prioridade</option>
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+    </div>
+    <div style="margin-top: 10px;">
+      <button type="submit">{{ editandoTarefa ? 'Salvar Alterações' : 'Adicionar Tarefa' }}</button>
+    </div>
+  </form>
+
+  <hr>
+  
+  <div class="filtros">
+    <h3 style="margin-bottom: 10px;">Filtrar Tarefas</h3>
+
+    <div>
+      <label>Prioridade:</label><br>
+      <select [(ngModel)]="filtroPrioridades" name="filtroPrioridades">        
+        <option value="baixa">Baixa</option>
+        <option value="média">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Data:</label><br>
+      <input type="date" [(ngModel)]="filtroData">
+    </div>
+
+    <div>
+      <label>Descrição:</label><br>
+      <input type="text" [(ngModel)]="termoBusca" placeholder="Buscar descrição">
+    </div>
+
+    <div style="margin-top: 10px;">
+      <button type="button" (click)="aplicarFiltros()">Aplicar Filtros</button>
+      <button type="button" (click)="limparFiltros()">Limpar Filtros</button>
+    </div>
+  </div>
+
+  <hr>
+ 
+  <div *ngIf="filtroAtivo && tarefasFiltradas.length === 0">
+    Nenhuma tarefa encontrada para esse filtro.
+  </div>
+
+  <div *ngIf="!filtroAtivo && tarefas.length === 0">
+    Nenhuma tarefa cadastrada.
+  </div>
+ 
+  <ul>
+    <li *ngFor="let tarefa of tarefasFiltradas.length > 0 ? tarefasFiltradas : tarefas">
+      <strong>{{ tarefa.descricao }}</strong> <br>
+      Data: {{ tarefa.dataHora | date: 'short' }} <br>
+      Prioridade: {{ tarefa.prioridade }} <br>
+      Concluída: {{ tarefa.concluida ? 'Sim' : 'Não' }}
+
+      <div style="margin-top: 5px;">
+        <button class="concluir" *ngIf="!tarefa.concluida" (click)="concluirTarefa(tarefa.id)">Concluir</button>
+        <button class="editar" (click)="editarTarefa(tarefa)">Editar</button>
+        <button class="excluir" (click)="excluirTarefa(tarefa.id)">Excluir</button>     
+      </div>
+
+      <hr>
+    </li>
+  </ul>
+</div>

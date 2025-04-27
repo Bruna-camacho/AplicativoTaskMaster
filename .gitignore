@@ -1,0 +1,7 @@
+# Ignorar pastas e arquivos que não devem ir para o GitHub
+.vs/
+bin/
+obj/
+packages/
+node_modules/
+dist/
