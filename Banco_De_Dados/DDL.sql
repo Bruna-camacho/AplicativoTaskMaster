@@ -1,5 +1,4 @@
 create database taskmaster;
-use taskmaster;create database taskmaster;
 use taskmaster;
 
 create table tarefa (
