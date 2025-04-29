@@ -21,7 +21,7 @@ Aplicativo de Gerenciamento de Tarefas
 - Node.js
 - Angular CLI
 - Visual Studio 2022 ou superior
-- SQL Server
+- SQL Server e SQL Server Management Studio
 
 ## Instruções de Execução
 
